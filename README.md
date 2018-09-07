@@ -1,4 +1,6 @@
 # imagestat
+# A. Halavanau. DeKalb, IL (2017) / Menlo Park, CA (2018)
+
 ImageStat is a small utility to calculate second order central image moments using scanning mask technique
 
 The method was originally developed in F. Lohl's paper
