@@ -1,3 +1,4 @@
+# A. Halavanau. DeKalb, IL (2017) / Menlo Park, CA (2018)
 import numpy as np
 import matplotlib.pyplot as plt
 import ImageTool as imtl
