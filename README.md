@@ -8,4 +8,10 @@ and further enchanced in Y. Sun's PhD Dissertation
 flat-beam generation”, University of
 Chicago, Chicago, USA (2005)
 
-ImageStat uses a three-parametric elliptical mask for scanning. Presented version is for academic use only.
+ImageStat uses a three-parametric elliptical mask for scanning. Presented version is written in python2.7 and for academic use only.
+
+Usage:
+
+python image.py
+
+Adjust parameters in parameters.py
