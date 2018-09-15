@@ -12,39 +12,7 @@ from matplotlib.colors import LinearSegmentedColormap
 from numpy import mean, sqrt, square, arange
 
 from plotting import *
-# beam density friendly color map
 from parameters import *
-
-cdict = cm.get_cmap('spectral')._segmentdata
-
-cdict['red'][0]   = (0, 0.0, 1)  
-cdict['blue'][0]  = (0, 0.0, 1)  
-cdict['green'][0] = (0, 0.0, 1)  
-
-del cdict['red'][17:19]
-del cdict['blue'][17:19]
-del cdict['green'][17:19]
-
-cdict['red'][-1]   = (1, 1.00, 1)  
-cdict['blue'][-1]  = (1, 0.0, 0)  
-cdict['green'][-1] = (1, 0.0, 0)  
-
-
-#for i in range(17):
-#  cdict['red'][i][0]   = cdict['red'][i][0]*1.0/0.8
-#  cdict['red'][i][1]   = cdict['red'][i][0]*1.0/0.8 
-#  cdict['blue'][i]  = (0, 0.0, 1)  
-#  cdict['green'][i] = (0, 0.0, 1)  
-
-
-#print cdict['red'][:]
-#print cdict['blue'][:]
-#print cdict['green'][:]
-
-beamcmap = LinearSegmentedColormap('name', cdict)
-
-plt.register_cmap(name='beamcmap', cmap=beamcmap)
-
 
 def Normalize(MyImage):
      w = np.where(MyImage<0.0)
@@ -192,7 +160,7 @@ def DisplayCalibratedProj(MyImage, cal, fudge):
      ycoord = ymin+np.linspace(0,1,len(yhist))*(ymax-ymin)
      yhist  = ymin+ fudge*(ymax-ymin)*yhist
 
-     plt.imshow(MyImage, aspect='auto', cmap='beamcmap',origin='lower',extent=[xmin, xmax, ymin, ymax])
+     plt.imshow(MyImage, aspect='auto', cmap='spectral',origin='lower',extent=[xmin, xmax, ymin, ymax])
      plt.plot(xcoord,xhist,color='r',linewidth=3) 
      plt.plot(yhist, ycoord,color='r', linewidth=3) 
      plt.ylim(ymin, ymax)
